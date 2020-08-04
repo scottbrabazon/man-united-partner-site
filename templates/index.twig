@@ -1,0 +1,33 @@
+{% requireLogin %}
+{% extends "_layouts/site" %}
+
+{% block main %}
+  
+<div class="silo">
+
+  <div class="copy contact">
+
+    <a href="{{ siteUrl }}logout"><button class="btn btn-logout"><span>Logout</span></button></a>
+
+    <h2>Further Details</h2>
+    
+    <p>{{ entry.mainCopy }}</p>
+    
+    <p>
+      <span class="copy__contact"><img class="link-icon" src="{{ siteUrl }}img/icon-phone.svg"> Call: <a href=""> {{ entry.mainTelephoneContact }}</a>&nbsp;&nbsp;</span>
+    
+      <span class="copy__contact"><img class="link-icon" src="{{ siteUrl }}img/icon-mail.svg"> Email: <a href=""> {{ entry.mainEmailContact }}</a></span>
+    </p>
+  </div>
+
+  <div class="background-image">
+  </div>
+
+  <img class="play-film" id="playVideo" src="{{ siteUrl }}img/play-film.svg">
+  
+</div>
+
+  
+{% endblock main %}
+
+

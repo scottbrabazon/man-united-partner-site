@@ -1,0 +1,50 @@
+{% extends "_layouts/site" %}
+
+{% block main %}
+  
+<div class="silo">
+  
+<div class="central-logo">
+  <img class="central-logo__img" src="{{ siteUrl }}img/central-logo.png">
+</div>
+
+<div class="copy login">
+  <h1 class="login__title">A unique opportunity to become an official partner of Manchester United</h1>
+    
+  <form class="login__form" method="post" accept-charset="UTF-8">
+      {{ getCsrfInput() }}
+      <input type="hidden" name="action" value="users/login">
+      
+      <div class="login__input">
+        <label class="login__label" for="loginName">Username</label>
+        <div class="login__field-box">
+          <input class="login__field" id="loginName" type="text" name="loginName" value="" placeholder="Username">
+        </div>
+      </div>
+      
+      <div class="login__input">
+        <label class="login__label" for="password">Password</label>
+        <div class="login__field-box">
+          <input class="login__field" id="password" type="password" name="password" placeholder="Password">
+        </div>
+      </div>
+      
+      {% if errorMessage is defined %}
+        <p class="login__error">{{ errorMessage }}</p>
+      {% endif %}
+
+      <p><a href="{{ siteUrl }}access-request">Forgot password?</a></p>
+      
+      
+      <button class="btn btn--login"><span>Login</span></button>
+
+
+  </form>
+  
+  
+</div>
+
+</div>
+
+  
+{% endblock main %}

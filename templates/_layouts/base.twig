@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="{{ craft.app.language |slice(0,2) }}">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>{{ pageTitle | default( siteName ) }}</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl }}/favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ siteUrl }}/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ siteUrl }}/favicons/favicon-16x16.png">
+    
+      <!-- remove the no-js -->
+      <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+      {% block headCssExternal %}
+      <link rel="stylesheet" href="https://use.typekit.net/icl6gzi.css">
+      {% endblock %}
+
+      {% block headCssInternal %}
+      <link rel="stylesheet" href="{{ siteUrl }}css/normalize.css">
+      <link rel="stylesheet" href="{{ siteUrl }}css/main.css">
+      {% endblock %}
+    
+  </head>
+  <body class="{{ bodyClass | default('') }}">
+    
+    {% block body %}{% endblock %}
+    
+    {% block footerScripts %}{% endblock %}
+  </body>
+</html>
